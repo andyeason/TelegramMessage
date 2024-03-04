@@ -16,8 +16,10 @@ async def main():
         print(f"Group ID: {group.id}, Group Name: {group.title}")
         if group.entity.username:
             group_ids[group.id] = group.entity.username
-        else:
+        elif group.entity.usernames:
             group_ids[group.id] = group.entity.usernames[0].username
+        else:
+            group_ids[group.id] = "Unknown"
     with open("group_ids.json", 'w') as f:
         json.dump(group_ids, f, separators=(',', ':'))
     # 断开连接

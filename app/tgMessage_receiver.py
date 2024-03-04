@@ -40,7 +40,7 @@ async def handle_new_message(event):
             config.logging.info(json.dumps(data))
             try:
                 if config.auto_send:
-                    await client.send_message(sender, config.message)
+                    await client.send_message(chat.id, config.message)
                     config.logging.info(sender_name + "   send success")
                     config.save_message(sender_id, sender_name, sender_username, chat_names[title], message_text, 'success',
                                           pickle.dumps(sender))

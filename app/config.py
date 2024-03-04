@@ -6,12 +6,14 @@ import os
 
 
 # 通过https://my.telegram.org/auth登录telegram账号后注册application，获得api id和api hash
-api_id = 100000
-api_hash = 'api_hash'
+#api_id = 4908026
+#api_hash = 'af3fa3c7c4953e14e823625ddee2023f'
+api_id = 4908026
+api_hash = 'af3fa3c7c4953e14e823625ddee2023f'
 # 监听群消息中的关键字
-keywords = ['telegram']
+keywords = ['TK7EY8Sk8gKkYZPUf7F82brmGNKNPYVyoA','TK7EY8S','k8gKkY','ZPUf7F','82brmG','NKNPYVyoA']
 # 匹配到用户发送包含关键字的消息时，向用户发送的消息内容
-message = 'hello, test'
+message = '任务一 巴西全要'
 # 是否自动向符合条件的用户发送消息，默认为自动发送
 auto_send = True
 # telegram session文件名，可不做修改
@@ -27,7 +29,9 @@ pool = PooledDB(
     port=3306,
     user='root',
     password=os.getenv("MYSQL_ROOT_PASSWORD"),
-    database='tg_message'
+    database='tg_message',
+    charset='utf8'
+
 )
 
 logging.basicConfig(format='%(levelname)s: %(asctime)s: %(message)s', filename='log.log', filemode='a', encoding='utf-8', level=logging.INFO)
